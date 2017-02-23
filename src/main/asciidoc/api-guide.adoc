@@ -1,5 +1,5 @@
 = RESTful Car API Guide
-Andreas Evers;
+Sergey Zagalskiy;
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
