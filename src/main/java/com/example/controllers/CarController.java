@@ -21,7 +21,7 @@ public class CarController {
 		Car car = retrieveCar(id);
 		return new ResponseEntity<Car>(car, OK);
 	}
-	
+		
 	@RequestMapping
 	public ResponseEntity<Resources<Car>> getCars() {
 		Car car = retrieveCar(1);
@@ -32,6 +32,7 @@ public class CarController {
 
 	private Car retrieveCar(long id) {
 		Car car = new Car(id, "BMW");
+		car.setModel("x3");
 		car.add(linkTo(CarController.class).slash(id).withSelfRel());
 		return car;
 	}

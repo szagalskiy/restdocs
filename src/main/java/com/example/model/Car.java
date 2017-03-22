@@ -8,6 +8,8 @@ public class Car extends ResourceSupport {
 	
 	private String brand;
 	
+	private String model;
+			
 	public Car() {}
 	
 	public Car(long id, String brand) {
@@ -25,6 +27,16 @@ public class Car extends ResourceSupport {
 	
 	public void setBrand(String brand) {
 		this.brand = brand;
-	}	
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+	
+	
 }
 

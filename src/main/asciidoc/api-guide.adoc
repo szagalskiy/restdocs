@@ -1,61 +1,56 @@
-= RESTful Car API Guide
+= REST Автомобили
 Sergey Zagalskiy;
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
 :toc: left
 :toclevels: 4
+:toc-title: Содержание
 :sectlinks:
 
 [[overview]]
-= Overview
+= Обзор
 
 [[overview-http-verbs]]
-== HTTP verbs
+== HTTP методы
 
 RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
 use of HTTP verbs.
 
+В данном REST API используются стандартные HTTP методы.
+
 |===
-| Verb | Usage
+| Метод | Описание
 
 | `GET`
-| Used to retrieve a resource
+| Используется для получения объекта
 
 | `POST`
-| Used to create a new resource
+| Используется для создания объекта
 
-| `PATCH`
-| Used to update an existing resource, including partial updates
+| `PUT`
+| Используется для существующего объекта, включая частичное обновление
 
 | `DELETE`
-| Used to delete an existing resource
+| Используется для удаления существующего объекта
 |===
 
 [[overview-http-status-codes]]
-== HTTP status codes
+== HTTP коды статусов
 
-RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
-use of HTTP status codes.
+В данном REST API используются стандартные коды статусов ответов HTTP.
 
 |===
-| Status code | Usage
+| Код статуса | Описание
 
 | `200 OK`
-| The request completed successfully
+| Запрос выполнен
 
 | `201 Created`
-| A new resource has been created successfully. The resource's URI is available from the response's
-`Location` header
+| Новый объект успешно создан
 
-| `204 No Content`
-| An update to an existing resource has been applied successfully
-
-| `400 Bad Request`
-| The request was malformed. The response body will include an error providing further information
-
-| `404 Not Found`
-| The requested resource did not exist
+| `500 Internal server error`
+| Внутренняя ошибка сервера
 |===
 
 [[overview-hypermedia]]
@@ -67,34 +62,34 @@ Language (HAL)] format. Links can be found beneath the `_links` key. Users of th
 not create URIs themselves, instead they should use the above-described links to navigate
 
 [[resources]]
-= Resources
+= Ресурсы
 
 
 
 [[resources-car]]
-== Car
+== Работа с автомобилями
 
-The car resource is used to show cars available in the system.
+Данный РЕСТ-сервис используется для получения всех автомобилей, имеющихся в ситеме
 
 
 
 [[resources-car-get]]
-=== Retrieving a car
+=== Запрос
 
-A `GET` request is used to get a specific car
+A `GET` запрос используется для получения конкретного автомобиля
 
-==== Response structure
+==== Поля ответа
 
 include::{snippets}/car-get/response-fields.adoc[]
 
-==== Example response
+==== Пример ответа
 
 include::{snippets}/car-get/http-response.adoc[]
 
 
 
 [[resources-car-links]]
-==== Links
+==== Ссылки
 
 include::{snippets}/car-get/links.adoc[]
 

@@ -46,14 +46,15 @@ public class AppTest {
 	}
 	
 	@Test
-	public void shouldGetCar() throws Exception {
+	public void getCar() throws Exception {
 		this.mockMvc.perform(get("/cars/1")) 
 	    		.andExpect(status().isOk())
 	    		.andDo(document("car-get", preprocessResponse(prettyPrint()), 
-	    				links(
-	    					halLinks(), linkWithRel("self").description("This car")),
+	    				links(halLinks(), 
+	    						linkWithRel("self").description("Автомобиль")),
 	    				responseFields(
-	    					fieldWithPath("brand").description("The brand of this car"),
+	    					fieldWithPath("brand").description("Марка автомобиля"),
+	    					fieldWithPath("model").description("Модель"),
 	    					fieldWithPath("_links").description("<<resources-car-links,Links>> to other resources"))));
 	}
 }
