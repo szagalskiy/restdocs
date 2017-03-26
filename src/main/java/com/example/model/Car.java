@@ -7,7 +7,7 @@ public class Car extends ResourceSupport {
 	private long id;
 	
 	private String brand;
-				
+							
 	public Car() {}
 	
 	public Car(long id, String brand) {
@@ -25,6 +25,6 @@ public class Car extends ResourceSupport {
 	
 	public void setBrand(String brand) {
 		this.brand = brand;
-	}		
+	}	
 }
 
