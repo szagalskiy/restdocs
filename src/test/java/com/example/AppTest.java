@@ -51,10 +51,9 @@ public class AppTest {
 	    		.andExpect(status().isOk())
 	    		.andDo(document("car-get", preprocessResponse(prettyPrint()), 
 	    				links(halLinks(), 
-	    						linkWithRel("self").description("Автомобиль")),
+	    						linkWithRel("self").description("Прямая ссылка на ресурс")),
 	    				responseFields(
 	    					fieldWithPath("brand").description("Марка автомобиля"),
-	    					fieldWithPath("model").description("Модель"),
-	    					fieldWithPath("_links").description("<<resources-car-links,Links>> to other resources"))));
+	    					fieldWithPath("_links").description("<<resources-car-links,Links>> Ссылки на ресурс"))));
 	}
 }

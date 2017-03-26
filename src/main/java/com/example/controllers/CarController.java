@@ -32,7 +32,6 @@ public class CarController {
 
 	private Car retrieveCar(long id) {
 		Car car = new Car(id, "BMW");
-		car.setModel("x3");
 		car.add(linkTo(CarController.class).slash(id).withSelfRel());
 		return car;
 	}

@@ -11,11 +11,10 @@ Sergey Zagalskiy;
 [[overview]]
 = Обзор
 
+Данное REST API предоставляет возможность работы с автомобилями
+
 [[overview-http-verbs]]
 == HTTP методы
-
-RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
-use of HTTP verbs.
 
 В данном REST API используются стандартные HTTP методы.
 
@@ -56,10 +55,10 @@ use of HTTP verbs.
 [[overview-hypermedia]]
 == Hypermedia
 
-RESTful Notes uses hypermedia and resources include links to other resources in their
-responses. Responses are in http://stateless.co/hal_specification.html[Hypertext Application
-Language (HAL)] format. Links can be found beneath the `_links` key. Users of the API should
-not create URIs themselves, instead they should use the above-described links to navigate
+В данном REST API используется Hypermedia, и ответы, получаемые при вызове REST-методов включают в себя прямые ссылки на возвращаемые ресурсы.
+<br/> 
+Используется http://stateless.co/hal_specification.html[Hypertext Application Language (HAL)].
+Пользователям API не нужно самим писать URI, вместо этого они могут использовать для навигации возвращаемые ссылки
 
 [[resources]]
 = Ресурсы
